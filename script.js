@@ -14,12 +14,12 @@ let neutron = 0
 let electron = 0
 
 //Hide elements
-toggleStuff('makeHydrogen')
+toggleStuff('makeHydrogen','hide')
 
 //Func
-function toggleStuff(id){
+function toggleStuff(id,cur){
     let temp = document.getElementById(id)
-  if (temp.style.display === "none") {
+  if (cur == "show") {
     temp.style.display = "block";
   } else {
     temp.style.display = "none";
@@ -65,7 +65,7 @@ function increment()
     
       //Compounds
       if ( proton > 0 && electron > 0 ){
-        toggleStuff('makeHydrogen')
+        toggleStuff('makeHydrogen','show')
       }
     
     
