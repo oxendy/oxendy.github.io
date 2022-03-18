@@ -13,6 +13,9 @@ let count = 0
 let proton = 0
 let neutron = 0
 let electron = 0
+const atoms = new Map()
+  
+
 
 //Hide elements
 toggleStuff('makeHydrogen','hide')
@@ -23,6 +26,7 @@ function compoundAtom(prot,neutr,electr){
   if ( prot == 1 && neutr == 0 && electr == 1 ) {
     proton -= prot
     neutron -= neutr
+    electron -= electr
   }
   
 }
