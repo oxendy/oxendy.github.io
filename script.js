@@ -6,6 +6,9 @@
     }, 250);
 }( document.title + " - " ));
 
+(function atomsTextUpdate  {
+    
+ })
 
 
 //Declaration
@@ -13,8 +16,10 @@ let count = 0
 let proton = 0
 let neutron = 0
 let electron = 0
-const atoms = new Map()
-  
+const atoms = new Map([
+  ["hydrogen", 0],
+])
+
 
 
 //Hide elements
@@ -27,6 +32,9 @@ function compoundAtom(prot,neutr,electr){
     proton -= prot
     neutron -= neutr
     electron -= electr
+    let temp = atoms.get("hydrogen")
+    temp += 1
+    atoms.set("hydrogen",temp)
   }
   
 }
