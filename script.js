@@ -6,9 +6,6 @@
     }, 250);
 }( document.title + " - " ));
 
-(function atomsTextUpdate  {
-    
- })
 
 
 //Declaration
@@ -26,8 +23,16 @@ const atoms = new Map([
 toggleStuff('makeHydrogen','hide')
 
 //Func
+function updateAtom(){
+  document.getElementById("hydrogenCount").innerHTML = atoms.get("hydrogen")
+  document.getElementById("counter").innerHTML = 
+        "Proton: " + proton +
+        "\n" + "Neutron: " + neutron +
+        "\n" + "Electron: " + electron  
+    }
+
 function compoundAtom(prot,neutr,electr){
-  
+  updateAtom()
   if ( prot == 1 && neutr == 0 && electr == 1 ) {
     proton -= prot
     neutron -= neutr
@@ -35,6 +40,7 @@ function compoundAtom(prot,neutr,electr){
     let temp = atoms.get("hydrogen")
     temp += 1
     atoms.set("hydrogen",temp)
+    
   }
   
 }
@@ -79,18 +85,14 @@ function increment()
         electron += 1
       }
       
-      document.getElementById("counter").innerHTML = 
-        "Proton: " + proton +
-        "\n" + "Neutron: " + neutron +
-        "\n" + "Electron: " + electron  
-    }
+      updateAtom()
     
       //Compounds
       if ( proton > 0 && electron > 0 ){
         toggleStuff('makeHydrogen','show')
       }
     
-    
+    }
     
     
     
