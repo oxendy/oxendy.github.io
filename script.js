@@ -1,3 +1,4 @@
+//Scrolling title
 (function titleScroller(text) {
     document.title = text;
     setTimeout(function () {
@@ -6,13 +7,16 @@
 }( document.title + " - " ));
 
 
-
+//Declaration
 let count = 0
-
 let proton = 0
 let neutron = 0
 let electron = 0
 
+//Hide elements
+toggleStuff('makeHydrogen')
+
+//Func
 function toggleStuff(id){
     let temp = document.getElementById(id)
   if (temp.style.display === "none") {
@@ -37,7 +41,12 @@ function increment()
         document.getElementById("counter").innerHTML = "Atoms: " + count
       }
     }
+    
+    
+    
     else{
+      
+      //Particle Increment
       if (getRandomInt(3) == 0){
         proton += 1
       }
@@ -51,7 +60,16 @@ function increment()
       document.getElementById("counter").innerHTML = 
         "Proton: " + proton +
         "\n" + "Neutron: " + neutron +
-        "\n" + "Electron: " + electron
-      
+        "\n" + "Electron: " + electron  
     }
+    
+      //Compounds
+      if ( proton > 0 && electron > 0 ){
+        toggleStuff('makeHydrogen')
+      }
+    
+    
+    
+    
+    
   }

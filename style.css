@@ -24,6 +24,14 @@
     format("opentype");
 }
 @font-face {
+    font-family: 'Linux';
+    src: url('linlibertine_r-webfont.woff2') format('woff2'),
+         url('linlibertine_r-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
   font-family: HK Grotesk;
   font-weight: bold;
   src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
