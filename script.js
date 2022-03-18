@@ -7,6 +7,7 @@
 }( document.title + " - " ));
 
 
+
 //Declaration
 let count = 0
 let proton = 0
@@ -17,8 +18,17 @@ let electron = 0
 toggleStuff('makeHydrogen','hide')
 
 //Func
+function compoundAtom(prot,neutr,electr){
+  
+  if ( prot == 1 && neutr == 0 && electr == 1 ) {
+    proton -= prot
+    neutron -= neutr
+  }
+  
+}
+
 function toggleStuff(id,cur){
-    let temp = document.getElementById(id)
+  let temp = document.getElementById(id)
   if (cur == "show") {
     temp.style.display = "block";
   } else {
