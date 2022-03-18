@@ -23,13 +23,14 @@ const atoms = new Map([
 toggleStuff('makeHydrogen','hide')
 
 //Func
+
 function updateAtom(){
   document.getElementById("hydrogenCount").innerHTML = atoms.get("hydrogen")
   document.getElementById("counter").innerHTML = 
         "Proton: " + proton +
         "\n" + "Neutron: " + neutron +
         "\n" + "Electron: " + electron  
-    }
+}
 
 function compoundAtom(prot,neutr,electr){
   updateAtom()
@@ -85,7 +86,10 @@ function increment()
         electron += 1
       }
       
-      updateAtom()
+      document.getElementById("counter").innerHTML = 
+        "Proton: " + proton +
+        "\n" + "Neutron: " + neutron +
+        "\n" + "Electron: " + electron  
     
       //Compounds
       if ( proton > 0 && electron > 0 ){
