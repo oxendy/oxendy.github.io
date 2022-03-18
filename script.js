@@ -6,11 +6,21 @@
 }( document.title + " - " ));
 
 
+
 let count = 0
 
 let proton = 0
 let neutron = 0
 let electron = 0
+
+function toggleStuff(id){
+    let temp = document.getElementById(id)
+  if (temp.style.display === "none") {
+    temp.style.display = "block";
+  } else {
+    temp.style.display = "none";
+  }
+}
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
