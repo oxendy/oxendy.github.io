@@ -16,6 +16,9 @@ let electron = 0
 const atoms = new Map([
   ["hydrogen", 0],
 ])
+var compoundList = {
+  hydrogen : [1,0,1]
+}
 
 
 
@@ -32,22 +35,10 @@ function updateAtom(){
         "\n" + "Electron: " + electron  
 }
 
-function compoundAtom(prot,neutr,electr){
-  if ( proton >= prot && neutron >= neutr && electron >= electr ){
-    
-    
-    if ( prot == 1 && neutr == 0 && electr == 1 ) {
-      proton -= prot
-      neutron -= neutr
-      electron -= electr
-      let temp = atoms.get("hydrogen")
-      temp += 1
-      
-      atoms.set("hydrogen",temp)
-      console.log(atoms.get('hydrogen'))
-      updateAtom()
-    }
-  }
+function compoundAtom(atom){
+  let particle = compoundList.atom
+  console.log(particle)
+  
 }
 
 function toggleStuff(id,cur){
