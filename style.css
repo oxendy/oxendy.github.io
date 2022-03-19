@@ -1,25 +1,6 @@
-.inlinee{
-  display: inline-block;
-  margin: 0;
-}
 
-:root 
-  --color-text-main: #000000;
-  --color-primary: #FFFF00;
-  --wrapper-height: 87vh;
-  --image-max-width: 300px;
-  --image-margin: 3rem;
-  --font-family: "HK Grotesk";
-  --font-family-header: "HK Grotesk";
-}
 
-/* Basic page style resets */
-* {
-  box-sizing: border-box;
-}
-[hidden] {
-  display: none !important;
-}
+
 
 /* Import fonts */
 @font-face {
@@ -48,13 +29,66 @@
 END Glitch hello-app default styles
 ******************************************************************************/
 
-body {
-  font-family: HK Grotesk;
-  background-color: var(--color-bg);
-}
 
-.Inkl{
-  display: inline-block;
-  vertical-align: middle;
-  margin: 10px 0;
+
+
+
+
+.button {
+   border: 1px solid #1a1a1a;
+   background: #666666;
+  
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
+   background: -webkit-linear-gradient(top, #ffffff, #888888);
+   background: -moz-linear-gradient(top, #ffffff, #888888);
+   background: -ms-linear-gradient(top, #ffffff, #888888);
+   background: -o-linear-gradient(top, #ffffff, #888888);
+   background-image: -ms-linear-gradient(top, #ffffff 0%, #888888 100%);
+    
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #cccccc 0 1px 0;
+   color: #000000;
+   font-size: 15px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   outline: none;
+   }
+
+.button:hover {
+   border: 1px solid #898989;
+   text-shadow: #d4d4d4 0 1px 0;
+   background: #666666;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#666666));
+   background: -webkit-linear-gradient(top, #ffffff, #666666);
+   background: -moz-linear-gradient(top, #ffffff, #666666);
+   background: -ms-linear-gradient(top, #ffffff, #666666);
+   background: -o-linear-gradient(top, #ffffff, #666666);
+   background-image: -ms-linear-gradient(top, #ffffff 0%, #666666 100%);
+   color: #000000;
+   }
+
+.button:active {
+   text-shadow: #bfbfbf 0 1px 0;
+   border: 1px solid #2e2e2e;
+
+   background: #d9d9d9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#616161));
+   background: -webkit-linear-gradient(top, #595959, #d9d9d9);
+   background: -moz-linear-gradient(top, #595959, #d9d9d9);
+   background: -ms-linear-gradient(top, #595959, #d9d9d9);
+   background: -o-linear-gradient(top, #595959, #d9d9d9);
+   background-image: -ms-linear-gradient(top, #595959 0%, #d9d9d9 100%);
+
+   color: #000000;
+   }
+
+.button:disabled{
+   opacity: 0.6;
+   border: 1px solid #ffffff;
 }
