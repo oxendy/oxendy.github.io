@@ -1,4 +1,7 @@
-
+.inlinee{
+  display: inline-block;
+  margin: 0;
+}
 
 :root 
   --color-text-main: #000000;
