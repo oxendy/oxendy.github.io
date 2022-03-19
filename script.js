@@ -27,7 +27,7 @@ var compoundList = {
 
 
 //Hide elements
-toggleStuff('makeHydrogen','hide')
+toggleStuff('hydrogenmake','hide')
 
 //Func
 
@@ -100,7 +100,7 @@ function increment()
     
       //Compounds
       if ( proton > 0 && electron > 0 ){
-        toggleStuff('makeHydrogen','show')
+        toggleStuff('hydrogenmake','show')
       }
     
     }
