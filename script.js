@@ -33,17 +33,21 @@ function updateAtom(){
 }
 
 function compoundAtom(prot,neutr,electr){
-  updateAtom()
-  if ( prot == 1 && neutr == 0 && electr == 1 ) {
-    proton -= prot
-    neutron -= neutr
-    electron -= electr
-    let temp = atoms.get("hydrogen")
-    temp += 1
-    atoms.set("hydrogen",temp)
+  if ( proton >= prot && neutron >= neutr && electron >= electr ){
     
+    
+    if ( prot == 1 && neutr == 0 && electr == 1 ) {
+      proton -= prot
+      neutron -= neutr
+      electron -= electr
+      let temp = atoms.get("hydrogen")
+      temp += 1
+      
+      atoms.set("hydrogen",temp)
+      console.log(atoms.get('hydrogen'))
+      updateAtom()
+    }
   }
-  
 }
 
 function toggleStuff(id,cur){
