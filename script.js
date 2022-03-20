@@ -17,11 +17,16 @@ let count = 0
 let proton = 0
 let neutron = 0
 let electron = 0
+
+
 const atoms = new Map([
   ["hydrogen", 0],
 ])
+//Proton, Neutron, Electron
+
 var compoundList = {
   hydrogen : [1,0,1]
+  helium   : [2,2,2]
 }
 
 
