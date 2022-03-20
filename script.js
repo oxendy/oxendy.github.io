@@ -21,23 +21,26 @@ let electron = 0
 
 const atoms = new Map([
   ["hydrogen", 0],
+  ["helium", 0],
 ])
 //Proton, Neutron, Electron
 
 var compoundList = {
-  hydrogen : [1,0,1]
-  helium   : [2,2,2]
+  hydrogen : [1,0,1],
+  helium   : [2,2,2],
 }
 
 
 
 //Hide elements
 toggleStuff('hydrogenmake','hide')
+toggleStuff('heliummake','hide')
 
 //Func
 
 function updateAtom(){
   document.getElementById("hydrogenCount").innerHTML = atoms.get("hydrogen")
+  document.getElementById("heliumCount").innerHTML = atoms.get("helium")
   document.getElementById("counter").innerHTML = 
         "Proton: " + proton +
         "\n" + "Neutron: " + neutron +
@@ -106,6 +109,9 @@ function increment()
       //Compounds
       if ( proton > 0 && electron > 0 ){
         toggleStuff('hydrogenmake','show')
+      }
+      if ( proton > 1 && electron > 1 && neutron > 1 ){
+        toggleStuff('heliummake','show')
       }
     
     }
