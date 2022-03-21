@@ -1,4 +1,6 @@
-
+.gameDiv {
+  display: flex;
+}
 * {
  font-size: 100%;
  font-family: courier,serif;

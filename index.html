@@ -20,29 +20,41 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <h3 id="counter"></h3>
-    <button type="button" onclick="increment()" id="incre" class="button">Grab an atom</button>
-    <br>
-    <div id='leftDiv'
-    <p>Compound</p>
-    <hr style="margin-top:-1em" />
-    
-    <div id="hydrogenmake">
-    <button class = "button" onclick="compoundAtom('hydrogen')">Make hydrogen</button> | Hydrogen: <span id="hydrogenCount">0</span><br />
-    </div>
-    
-    <br>
-    
-    <div id="heliummake">
-    <button class = "button" onclick="compoundAtom('helium')">Make helium</button> | Helium: <span id="heliumCount">0</span><br />
-    </div>
-        
-    <br>
-    
-    <div id="oxygenmake">
-    <button class = "button" onclick="compoundAtom('oxygen')">Make oxygen</button> | Oxygen: <span id="oxygenCount">0</span><br />
+    <div id="counterDiv">
+        <h3 id="counter"></h3>
+        <button type="button" onclick="increment()" id="incre" class="button">Grab an atom</button>
+        <br>
     </div>
 
+    
 
+    <div class="gameDiv">
+      
+      
+      <br>
+      <div id="compoundDiv">
+
+          <p>Compound</p>
+          <hr style="margin-top:-1em" />
+
+          <div id="hydrogenmake">
+          <button class = "button" onclick="compoundAtom('hydrogen')">Make hydrogen</button> | Hydrogen: <span id="hydrogenCount">0</span><br />
+          </div>
+
+          <br>
+
+          <div id="heliummake">
+          <button class = "button" onclick="compoundAtom('helium')">Make helium</button> | Helium: <span id="heliumCount">0</span><br />
+          </div>
+
+          <br>
+
+          <div id="oxygenmake">
+          <button class = "button" onclick="compoundAtom('oxygen')">Make oxygen</button> | Oxygen: <span id="oxygenCount">0</span><br />
+          </div>
+      
+      </div>
+    </div>
+    
   </body>
 </html>
