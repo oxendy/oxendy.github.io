@@ -26,7 +26,7 @@ const atoms = new Map([
 ])
 //Proton, Neutron, Electron
 
-var compoundList = {
+const compoundList = {
   hydrogen : [1,0,1],
   helium   : [2,2,2],
   oxygen   : [8,8,8],
@@ -35,9 +35,11 @@ var compoundList = {
 
 
 //Hide elements
+
 for (const [key, value] of Object.entries(compoundList)) {
-  toggleStuff(key,'hide')
-  console.log(key)
+  let temp = key
+  toggleStuff(temp + 'make','hide')
+  console.log(temp)
 }
 
 
@@ -114,13 +116,13 @@ function increment()
         "\n" + "Electron: " + electron  
     
       //Compounds
-     /* for (const [key, value] of Object.entries(compoundList)) {
+     for (const [key, value] of Object.entries(compoundList)) {
         let arrayVal = value
         console.log(arrayVal)
         if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
-          toggleStuff(key,'show')
+          toggleStuff(key + 'make','show')
         }
-      } */
+      } 
 
     
     }
