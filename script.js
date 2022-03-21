@@ -39,17 +39,10 @@ const compoundList = {
 for (const [key, value] of Object.entries(compoundList)) {
   let temp = key
   toggleStuff(temp + 'make','hide')
-  console.log(temp)
 }
 
 
 //Func
-function mouseOver(atom){
-  document.getElementById(atom).innerHTML = compoundList[atom]
-}
-function mouseOut(atom){
-  document.getElementById(atom).innerHTML = "Make " + atom
-}
 function updateAtom(){
   for (const [key, value] of Object.entries(compoundList)) {
   document.getElementById(key + "Count").innerHTML = atoms.get(key)
