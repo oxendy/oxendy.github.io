@@ -44,7 +44,12 @@ for (const [key, value] of Object.entries(compoundList)) {
 
 
 //Func
-
+function mouseOver(atom){
+  document.getElementById(atom).innerHTML = compoundList[atom]
+}
+function mouseOut(atom){
+  document.getElementById(atom).innerHTML = "Make " + atom
+}
 function updateAtom(){
   for (const [key, value] of Object.entries(compoundList)) {
   document.getElementById(key + "Count").innerHTML = atoms.get(key)
@@ -57,6 +62,7 @@ function updateAtom(){
 }
 
 function compoundAtom(atom){
+  console.log(atom)
   let particle = compoundList[atom]
   if ( proton >= particle[0] && neutron >= particle[1] && electron >= particle[2] ){
     proton -= particle[0]
