@@ -1,12 +1,3 @@
-div #navBar{
-  display: flex;                             
-}
- 
-
-div #navBar span {
-  display: inline-block;
-  font-size: 10rem;                             
-}
 
 .gameDiv {
   display: flex;
@@ -16,6 +7,7 @@ div #navBar span {
 .multiline {
   white-space: pre-wrap;
   line-height: 0.9;
+  float:middle;
   
 }
 
