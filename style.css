@@ -1,6 +1,11 @@
 .gameDiv {
   display: flex;
 }
+
+.col{
+  flex: 50%;
+}
+
 * {
  font-size: 100%;
  font-family: courier,serif;
