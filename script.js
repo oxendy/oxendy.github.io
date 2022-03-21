@@ -22,25 +22,32 @@ let electron = 0
 const atoms = new Map([
   ["hydrogen", 0],
   ["helium", 0],
+  ["oxygen", 0],
 ])
 //Proton, Neutron, Electron
 
 var compoundList = {
   hydrogen : [1,0,1],
   helium   : [2,2,2],
+  oxygen   : [8,8,8],
 }
 
 
 
 //Hide elements
-toggleStuff('hydrogenmake','hide')
-toggleStuff('heliummake','hide')
+for (const [key, value] of Object.entries(compoundList)) {
+  toggleStuff(key,'hide')
+  console.log(key)
+}
+
 
 //Func
 
 function updateAtom(){
-  document.getElementById("hydrogenCount").innerHTML = atoms.get("hydrogen")
-  document.getElementById("heliumCount").innerHTML = atoms.get("helium")
+  for (const [key, value] of Object.entries(compoundList)) {
+  document.getElementById(key + "Count").innerHTML = atoms.get(key)
+  }
+  
   document.getElementById("counter").innerHTML = 
         "Proton: " + proton +
         "\n" + "Neutron: " + neutron +
@@ -107,12 +114,14 @@ function increment()
         "\n" + "Electron: " + electron  
     
       //Compounds
-      if ( proton > 0 && electron > 0 ){
-        toggleStuff('hydrogenmake','show')
-      }
-      if ( proton > 1 && electron > 1 && neutron > 1 ){
-        toggleStuff('heliummake','show')
-      }
+     /* for (const [key, value] of Object.entries(compoundList)) {
+        let arrayVal = value
+        console.log(arrayVal)
+        if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
+          toggleStuff(key,'show')
+        }
+      } */
+
     
     }
     
