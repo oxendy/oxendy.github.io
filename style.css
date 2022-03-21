@@ -2,9 +2,17 @@
   display: flex;
 }
 
+
+.multiline {
+  white-space: pre-wrap;
+      margin: 0;
+    padding: 0;
+}
+
 .col{
   flex: 50%;
 }
+
 
 * {
  font-size: 100%;
