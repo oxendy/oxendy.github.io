@@ -1,3 +1,13 @@
+div #navBar{
+  display: flex;                             
+}
+ 
+
+div #navBar span {
+  display: inline-block;
+  font-size: 10rem;                             
+}
+
 .gameDiv {
   display: flex;
 }
@@ -5,8 +15,8 @@
 
 .multiline {
   white-space: pre-wrap;
-      margin: 0;
-    padding: 0;
+  line-height: 0.9;
+  
 }
 
 .col{
