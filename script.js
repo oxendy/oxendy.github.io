@@ -25,6 +25,13 @@ const atoms = new Map([
   ["oxygen", 0],
 ])
 
+
+if ( localStorage.length > 0 ){
+  loadGame()
+  document.getElementById("logger").innerHTML = "Welcome back"
+}
+
+
 function saveGame(){
   localStorage.setItem("proton", proton)
   localStorage.setItem("neutron", neutron)
