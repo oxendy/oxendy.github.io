@@ -10,18 +10,37 @@
 
 
 //Declaration
-var spinningMonke
-let count = 0
-let proton = 0
-let neutron = 0
-let electron = 0
 
-
+var count = 0
+var proton = 0
+var neutron = 0
+var electron = 0
 const atoms = new Map([
   ["hydrogen", 0],
   ["helium", 0],
   ["oxygen", 0],
 ])
+
+
+function saveGame(){
+  localStorage.setItem("count", count)
+  localStorage.setItem("proton", proton)
+  localStorage.setItem("neutron", neutron)
+  localStorage.setItem("electron", electron)
+  for (const [key, value] of atoms.entries()) {
+    localStorage.setItem(key,value)
+  }
+}
+
+function loadGame(){
+  var count = localStorage.getItem("count")
+  var proton = localStorage.getItem("proton")
+  var neutron = localStorage.getItem("neutron")
+  var electron = localStorage.getItem("electron")
+  for (let i = 0; i < 5; i++) {
+}
+
+
 //Proton, Neutron, Electron
 
 const compoundList = {
