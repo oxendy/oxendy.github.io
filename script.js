@@ -51,6 +51,7 @@ function loadGame(){
   for (let i = 0; i < atoms.size; i++) {
     atoms.set(Array.from(atoms.keys())[i], parseInt(localStorage.getItem(Array.from(atoms.keys())[i])))
   }
+  
   updateAtom()
   
 }
@@ -73,6 +74,7 @@ function delay(time) {
 
 //Func
 function updateAtom(){
+  availAtom()
   for (const [key, value] of Object.entries(compoundList)) {
   document.getElementById(key + "Count").innerHTML = atoms.get(key)
   }
