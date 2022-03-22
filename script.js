@@ -24,6 +24,7 @@ const atoms = new Map([
   ["helium", 0],
   ["oxygen", 0],
 ])
+var navbars = ["COMPOUNDDIV","UPGRADEDIV"]
 
 
 if ( localStorage.length > 0 ){
@@ -148,3 +149,9 @@ function availAtom(){
       } 
 }  
   
+
+function navBar(dir){
+  for (var i = 0; i < navbars.length; i++) {
+    toggleStuff(navbars[i],)
+  }
+}
