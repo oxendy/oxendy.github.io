@@ -16,11 +16,10 @@ const compoundList = {
   helium   : [2,2,2],
   oxygen   : [8,8,8],
 }
-
-var count = 0
 var proton = 0
 var neutron = 0
 var electron = 0
+var compoundUnlock = "no"
 const atoms = new Map([
   ["hydrogen", 0],
   ["helium", 0],
@@ -29,11 +28,10 @@ const atoms = new Map([
 
 
 function saveGame(){
-  localStorage.setItem("count", count)
   localStorage.setItem("proton", proton)
   localStorage.setItem("neutron", neutron)
   localStorage.setItem("electron", electron)
-  
+  localStorage.setItem("compoundUnlock", compoundUnlock)
   for (const [key, value] of atoms.entries()) {
     localStorage.setItem(key,value)
     console.log(localStorage.getItem(key))
@@ -41,14 +39,13 @@ function saveGame(){
 }
 
 function loadGame(){
-  var count = localStorage.getItem("count")
-  var proton = localStorage.getItem("proton")
-  var neutron = localStorage.getItem("neutron")
-  var electron = localStorage.getItem("electron")
+  proton = localStorage.getItem("proton")
+  neutron = localStorage.getItem("neutron")
+  electron = localStorage.getItem("electron")
+  compoundUnlock = localStorage.getItem("compoundUnlock")
   for (let i = 0; i < atoms.size; i++) {
     atoms.set(Array.from(atoms.keys())[i], localStorage.getItem(Array.from(atoms.keys())[i]))
   }
-  
   updateAtom()
 }
   
@@ -104,21 +101,7 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function increment()
-  {
-    if (count < 20){
-      count += 1
-      if (count == 1){
-        document.getElementById("counter").innerHTML = "Atom: " + count
-      }
-      else{
-        document.getElementById("counter").innerHTML = "Atoms: " + count
-      }
-    }
-    
-    
-    
-    else{
+function increment(){
       
       //Particle Increment
       if (getRandomInt(3) == 0){
@@ -149,4 +132,4 @@ function increment()
     
     
     
-  }
+  
