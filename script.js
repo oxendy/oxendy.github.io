@@ -20,9 +20,10 @@ const atoms = new Map([
   ["helium", 0],
   ["oxygen", 0],
 ])
-
+loadGame()
 
 function saveGame(){
+  console.log(localStorage.getItem("count"))
   localStorage.setItem("count", count)
   localStorage.setItem("proton", proton)
   localStorage.setItem("neutron", neutron)
@@ -37,10 +38,11 @@ function loadGame(){
   var proton = localStorage.getItem("proton")
   var neutron = localStorage.getItem("neutron")
   var electron = localStorage.getItem("electron")
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < atoms.size; i++) {
+    atoms.set(Array.from(atoms.keys())[i], localStorage.getItem(Array.from(atoms.keys())[i]))
+  }
 }
-
-
+  
 //Proton, Neutron, Electron
 
 const compoundList = {
@@ -61,6 +63,7 @@ for (const [key, value] of Object.entries(compoundList)) {
 
 //Func
 function updateAtom(){
+  saveGame()
   for (const [key, value] of Object.entries(compoundList)) {
   document.getElementById(key + "Count").innerHTML = atoms.get(key)
   }
@@ -72,7 +75,6 @@ function updateAtom(){
 }
 
 function compoundAtom(atom){
-  console.log(atom)
   let particle = compoundList[atom]
   if ( proton >= particle[0] && neutron >= particle[1] && electron >= particle[2] ){
     proton -= particle[0]
@@ -134,7 +136,6 @@ function increment()
       //Compounds
      for (const [key, value] of Object.entries(compoundList)) {
         let arrayVal = value
-        console.log(arrayVal)
         if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
           toggleStuff(key + 'make','show')
         }
