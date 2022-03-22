@@ -18,19 +18,12 @@
 
     <!-- Import the webpage's javascript file -->
     <script src="/script.js" defer></script>
+    <script src="/ascii.js" defer></script>
   </head>
   <body>
-    <div class="multiline" id="navBar">
-<span id="navAtomGrabber">
-+----------
-|   THE   |
-|  ATOM   |
-| GRABBER |
-+----------
-</span>   
-    </div>
-
-    
+    <p id="logger">
+      Welcome to Atom Clicker!
+    </p>
     
     <div id="counterDiv">
         <h3 id="counter"></h3>
@@ -38,8 +31,6 @@
         <br>
     </div>
 
-    
-    
     <div class="gameDiv">
       
       <br>
@@ -64,6 +55,30 @@
           <button id="oxygen" class = "button" onclick="compoundAtom('oxygen')">Make oxygen</button> | Oxygen: <span id="oxygenCount">0</span><br />
           </div>
   
+      </div>
+      <div class="col">
+        <p class="multiline" id="atomicASCII" onmousehover="atomicText('show')">
+                      (@@@(                    
+                   (@(   (@(       
+                 .,/%*   ,(((,      
+     *%%%%%*     ,///,     (@(     *%%%%%*
+   (@(     (@(   (@(       (@( (@@@(     (@(
+   *%(,.     *%%%&@(       (@&%*       .,(%*
+     (@(       ,(((,       ,(((,       (@(
+     .,(%*     (@( *%%%%%%%* (@(     *%(,.
+         (@(   (@@@(       (@@@(   (@(
+           *%(,#@(   *###*   (@#,(%*
+           ,(((%@(   *###*   (@%(((,
+         .,*(, (@&%*  ...  *%&@( .,(%*
+       (@#***. (@( (@@@@@@@( (@(     (@(
+   .,(%*       *%(,.       .,(%*       (@(
+   (@(       ,(((%@(       (@%(/***.   ,(((,
+   (@(     *%(,,,#@(       (@#,/####%*   (@(
+     (@@@@@(     (@(       (@(       (@@@(
+                   (@(   (@(
+                   ,(((((((,
+                     .,,,.
+        </p>
       </div>
     </div>
     
