@@ -41,6 +41,8 @@ function saveGame(){
     localStorage.setItem(key,value)
     console.log(localStorage.getItem(key))
   }
+  
+  savedSuccessfully()
 }
 
 function loadGame(){
