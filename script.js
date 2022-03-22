@@ -11,6 +11,12 @@
 
 //Declaration
 
+const compoundList = {
+  hydrogen : [1,0,1],
+  helium   : [2,2,2],
+  oxygen   : [8,8,8],
+}
+
 var count = 0
 var proton = 0
 var neutron = 0
@@ -20,16 +26,17 @@ const atoms = new Map([
   ["helium", 0],
   ["oxygen", 0],
 ])
-loadGame()
+
 
 function saveGame(){
-  console.log(localStorage.getItem("count"))
   localStorage.setItem("count", count)
   localStorage.setItem("proton", proton)
   localStorage.setItem("neutron", neutron)
   localStorage.setItem("electron", electron)
+  
   for (const [key, value] of atoms.entries()) {
     localStorage.setItem(key,value)
+    console.log(localStorage.getItem(key))
   }
 }
 
@@ -41,15 +48,12 @@ function loadGame(){
   for (let i = 0; i < atoms.size; i++) {
     atoms.set(Array.from(atoms.keys())[i], localStorage.getItem(Array.from(atoms.keys())[i]))
   }
+  
+  updateAtom()
 }
   
+  
 //Proton, Neutron, Electron
-
-const compoundList = {
-  hydrogen : [1,0,1],
-  helium   : [2,2,2],
-  oxygen   : [8,8,8],
-}
 
 
 
@@ -63,7 +67,6 @@ for (const [key, value] of Object.entries(compoundList)) {
 
 //Func
 function updateAtom(){
-  saveGame()
   for (const [key, value] of Object.entries(compoundList)) {
   document.getElementById(key + "Count").innerHTML = atoms.get(key)
   }
