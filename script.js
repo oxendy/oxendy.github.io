@@ -25,7 +25,7 @@ const atoms = new Map([
   ["helium", 0],
   ["oxygen", 0],
 ])
-
+loadGame()
 
 function saveGame(){
   localStorage.setItem("proton", proton)
@@ -39,14 +39,14 @@ function saveGame(){
 }
 
 function loadGame(){
-  proton = localStorage.getItem("proton")
-  neutron = localStorage.getItem("neutron")
-  electron = localStorage.getItem("electron")
-  compoundUnlock = localStorage.getItem("compoundUnlock")
+  proton = parseInt(localStorage.getItem("proton"))
+  neutron = parseInt(localStorage.getItem("neutron"))
+  electron = parseInt(localStorage.getItem("electron"))
   for (let i = 0; i < atoms.size; i++) {
     atoms.set(Array.from(atoms.keys())[i], localStorage.getItem(Array.from(atoms.keys())[i]))
   }
   updateAtom()
+  
 }
   
   
@@ -61,6 +61,9 @@ for (const [key, value] of Object.entries(compoundList)) {
   toggleStuff(temp + 'make','hide')
 }
 
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 
 //Func
 function updateAtom(){
@@ -71,7 +74,7 @@ function updateAtom(){
   document.getElementById("counter").innerHTML = 
         "Proton: " + proton +
         "\n" + "Neutron: " + neutron +
-        "\n" + "Electron: " + electron  
+        "\n" + "Electron: " + electron
 }
 
 function compoundAtom(atom){
@@ -83,7 +86,6 @@ function compoundAtom(atom){
     let temp = atoms.get(atom)
     temp += 1
     atoms.set(atom, temp)
-    updateAtom()
   }
   
 }
@@ -120,16 +122,18 @@ function increment(){
         "\n" + "Electron: " + electron  
     
       //Compounds
-     for (const [key, value] of Object.entries(compoundList)) {
-        let arrayVal = value
-        if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
-          toggleStuff(key + 'make','show')
-        }
-      } 
+     availAtom()
 
     
     }
     
     
-    
+function availAtom(){
+  for (const [key, value] of Object.entries(compoundList)) {
+        let arrayVal = value
+        if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
+          toggleStuff(key + 'make','show')
+        }
+      } 
+}  
   
