@@ -21,7 +21,8 @@
     <script src="/script.js" defer></script>
     
   </head>
-  <body>
+  <body onload="navBar('COMPOUNDDIV');availAtom()">
+  
     <div id="navBar" class="gameDiv">
       <div id="saveBar">
       +------+<br>
@@ -30,13 +31,15 @@
       </div>
       <div id="compoundBar">
       --------+<br>
-      <a onclick="" href="#Compound">Compound</a>|
+      <a onclick="navBar('COMPOUNDDIV')" href="#Compound">Compound</a>|
 <br />--------+
       </div>
       <div id="upgradeBar">
-      --------+<br>
-      <a onclick="" href="#Upgrade">Upgrade</a>|
-<br />--------+
+        
+        
+      -------+<br>
+      <a onclick="navBar('UPGRADEDIV')" href="#Upgrade">Upgrade</a>|
+<br />-------+
       </div>
 
     </div>

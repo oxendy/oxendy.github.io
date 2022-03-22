@@ -152,6 +152,7 @@ function availAtom(){
 
 function navBar(dir){
   for (var i = 0; i < navbars.length; i++) {
-    toggleStuff(navbars[i],)
+    toggleStuff(navbars[i],'hide')
   }
+  toggleStuff(dir,'show')
 }
