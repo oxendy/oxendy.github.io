@@ -19,19 +19,17 @@ const compoundList = {
 var proton = 0
 var neutron = 0
 var electron = 0
-var compoundUnlock = "no"
 const atoms = new Map([
   ["hydrogen", 0],
   ["helium", 0],
   ["oxygen", 0],
 ])
-loadGame()
 
 function saveGame(){
   localStorage.setItem("proton", proton)
   localStorage.setItem("neutron", neutron)
   localStorage.setItem("electron", electron)
-  localStorage.setItem("compoundUnlock", compoundUnlock)
+
   for (const [key, value] of atoms.entries()) {
     localStorage.setItem(key,value)
     console.log(localStorage.getItem(key))
@@ -42,8 +40,9 @@ function loadGame(){
   proton = parseInt(localStorage.getItem("proton"))
   neutron = parseInt(localStorage.getItem("neutron"))
   electron = parseInt(localStorage.getItem("electron"))
+  
   for (let i = 0; i < atoms.size; i++) {
-    atoms.set(Array.from(atoms.keys())[i], localStorage.getItem(Array.from(atoms.keys())[i]))
+    atoms.set(Array.from(atoms.keys())[i], parseInt(localStorage.getItem(Array.from(atoms.keys())[i])))
   }
   updateAtom()
   
@@ -87,6 +86,7 @@ function compoundAtom(atom){
     temp += 1
     atoms.set(atom, temp)
   }
+  updateAtom()
   
 }
 
