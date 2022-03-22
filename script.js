@@ -1,7 +1,4 @@
 
-
-
-
 //Scrolling title
 (function titleScroller(text) {
     document.title = text;
@@ -13,6 +10,7 @@
 
 
 //Declaration
+var spinningMonke
 let count = 0
 let proton = 0
 let neutron = 0
