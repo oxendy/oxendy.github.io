@@ -7,7 +7,7 @@
     }, 250);
 }( document.title + " - " ));
 
-
+window.onload = availAtom()
 
 //Declaration
 
@@ -145,6 +145,10 @@ function availAtom(){
         let arrayVal = value
         if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
           toggleStuff(key + 'make','show')
+          
+        }
+        else if ( document.getElementById(key + 'make').style.display == "show" ){
+          
         }
       } 
 }  
