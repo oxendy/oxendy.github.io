@@ -7,7 +7,10 @@
     }, 250);
 }( document.title + " - " ));
 
-window.onload = availAtom()
+window.onload = function(){
+  availAtom()
+  navBar('COMPOUNDDIV')
+}
 
 //Declaration
 
