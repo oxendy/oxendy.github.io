@@ -30,6 +30,7 @@ const atoms = new Map([
 var navbars = ["COMPOUNDDIV","UPGRADEDIV"]
 
 
+
 if ( localStorage.length > 0 ){
   loadGame()
   document.getElementById("logger").innerHTML = "Welcome back"
@@ -64,18 +65,7 @@ function loadGame(){
   updateAtom()
   
 }
-  
-  
-//Proton, Neutron, Electron
 
-
-
-//Hide elements
-
-for (const [key, value] of Object.entries(compoundList)) {
-  let temp = key
-  toggleStuff(temp + 'make','hide')
-}
 
 function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
@@ -149,12 +139,13 @@ function increment(){
 function availAtom(){
   for (const [key, value] of Object.entries(compoundList)) {
         let arrayVal = value
+        let temp = document.getElementById(key + 'make')
         if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
           toggleStuff(key + 'make','show')
           
         }
-        else if ( document.getElementById(key + 'make').style.display == "show" ){
-          
+        else{
+          toggleStuff(key + 'make','hide')
         }
       } 
 }  
