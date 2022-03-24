@@ -8,7 +8,7 @@
 }( document.title + " - " ));
 
 window.onload = function(){
-  availAtom()
+  updateAtom()
   navBar('COMPOUNDDIV')
 }
 
@@ -80,18 +80,8 @@ function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
 
-//Func
-function updateAtom(){
-  availAtom()
-  for (const [key, value] of Object.entries(compoundList)) {
-  document.getElementById(key + "Count").innerHTML = atoms.get(key)
-  }
+
   
-  document.getElementById("counter").innerHTML = 
-        "Proton: " + proton +
-        "\n" + "Neutron: " + neutron +
-        "\n" + "Electron: " + electron
-}
 
 function compoundAtom(atom){
   let particle = compoundList[atom]
@@ -139,13 +129,13 @@ function increment(){
         "\n" + "Electron: " + electron  
     
       //Compounds
-     availAtom()
+     updateAtom()
 
     
     }
     
     
-function availAtom(){
+function updateAtom(){
   
   for (const [key, value] of Object.entries(compoundList)) {
         let arrayVal = value
@@ -158,13 +148,23 @@ function availAtom(){
           
         }
         else if ( unlockedAtoms.includes(key) ){
-          document.getElementById(key+'make').disabled = true;
+          document.getElementById(key).disabled = true;
         }
         else{
           toggleStuff(key + 'make','hide')
         }
       } 
-}  
+  
+  for (const [key, value] of Object.entries(compoundList)) {
+  document.getElementById(key + "Count").innerHTML = atoms.get(key)
+  }
+  
+  
+  document.getElementById("counter").innerHTML = 
+        "Proton: " + proton +
+        "\n" + "Neutron: " + neutron +
+        "\n" + "Electron: " + electron
+}
   
 
 function navBar(dir){
