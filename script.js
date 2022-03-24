@@ -48,8 +48,9 @@ function saveGame() {
   for (let i = 0; i < unlockedAtoms.length; i++) {
     localStorage.setItem("unlockedAtom" + i, unlockedAtoms[i]);
   }
-  for (let i = 0; i < unlockedDivs.length; i++) {
-    localStorage.setItem("unlockedDiv" + i, unlockedDivs[i]);
+  
+  for (let j = 0; j < unlockedDivs.length; j++) {
+    localStorage.setItem("unlockedDiv" + j, unlockedDivs[j]);
   }
 
   
@@ -74,8 +75,8 @@ function loadGame() {
   for (let j = 0; j < atoms.size; j++) {
     unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j));
   }
-  for (let j = 0; j < navbars.length; j++) {
-    unlockedDivs.push(localStorage.getItem("unlockedDiv" + j));
+  for (let k = 0; k < navbars.length; k++) {
+    unlockedDivs.push(localStorage.getItem("unlockedDiv" + k));
     
   }
   updateElement();
@@ -154,6 +155,7 @@ function increment() {
 
 function requestUpgrade(){
   unlockedDivs.push('UPGRADEDIV');
+  
   toggleStuff('requestAnUpdate','hide');
   atoms.set('hydrogen', atoms.get('hydrogen')-10);
   updateElement();
