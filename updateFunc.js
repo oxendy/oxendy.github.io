@@ -25,10 +25,11 @@ function updateElement(){
 
 function updateDiv(){
   for ( let i = 0; i < navbars.length; i++) {
+    let temp = navbars[i].toLowerCase()
     if ( unlockedDivs.includes(navbars[i]) ){
-      toggleStuff(navbars[i].toLowerCase() + "bar","show")
+      toggleStuff(temp.substring(0, temp.length - 3) + "Bar","show")
     }else{
-      toggleStuff(navbars[i].toLowerCase() + "bar","hide")
+      toggleStuff(temp.substring(0, temp.length - 3) + "Bar","hide")
     }
   
   }
