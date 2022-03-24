@@ -151,3 +151,10 @@ function increment() {
   //Compounds
   updateElement();
 }
+
+function requestUpgrade(){
+  unlockedDivs.push('UPGRADEDIV');
+  toggleStuff('requestAnUpdate','hide');
+  atoms.set('hydrogen', atoms.get('hydrogen')-10);
+  updateElement();
+}

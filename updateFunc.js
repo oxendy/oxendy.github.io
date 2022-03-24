@@ -36,7 +36,7 @@ function updateDiv(){
 }
 
 function updateButton(){
-  if ( atoms.get('hydrogen') >= 10 ){
+  if ( atoms.get('hydrogen') >= 10 && !unlockedDivs.includes('UPGRADEDIV')){
     toggleStuff('requestAnUpdate','show')
   }else{
     toggleStuff('requestAnUpdate','hide')
