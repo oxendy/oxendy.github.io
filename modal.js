@@ -17,3 +17,11 @@ window.onclick = function(event) {
     saveModal.style.display = "none";
   }
 }
+
+function autoSave(){
+  if (document.getElementById('enableAutosave').checked) {
+            alert("checked");
+        } else {
+            alert("You didn't check it! Let me check it for you.");
+        }
+}
