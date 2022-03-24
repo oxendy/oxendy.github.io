@@ -45,8 +45,11 @@ function saveGame(){
     localStorage.setItem(key,value)
     console.log(localStorage.getItem(key))
   }
+  if (document.getElementById('enableAutosave').checked) {
   
-  savedSuccessfully()
+  } else {
+    savedSuccessfully()
+  }
 }
 
 function loadGame(){
@@ -162,4 +165,13 @@ function navBar(dir){
     toggleStuff(navbars[i],'hide')
   }
   toggleStuff(dir,'show')
+}
+
+function autoSave(){
+  if (document.getElementById('enableAutosave').checked) {
+            saveGame();
+            setInterval(function(){
+                saveGame()
+            }, 3000)
+        } 
 }

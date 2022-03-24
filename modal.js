@@ -18,10 +18,3 @@ window.onclick = function(event) {
   }
 }
 
-function autoSave(){
-  if (document.getElementById('enableAutosave').checked) {
-            alert("checked");
-        } else {
-            alert("You didn't check it! Let me check it for you.");
-        }
-}
