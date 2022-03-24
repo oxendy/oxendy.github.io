@@ -21,7 +21,11 @@ function updateElement(){
   updateButton()
 }    
 function updateButton(){
-  if ( atoms.get('hydrogen') == 
+  if ( atoms.get('hydrogen') >= 10 ){
+    toggleStuff('requestAnUpdate','show')
+  }else{
+    toggleStuff('requestAnUpdate','hide')
+  }
 }
 
 function updateAtom(){
@@ -30,6 +34,7 @@ function updateAtom(){
         let arrayVal = value
         if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
           toggleStuff(key + 'make','show')
+          document.getElementById(key).disabled = false;
           if (!unlockedAtoms.includes(key)){
             unlockedAtoms.push(key)
           }

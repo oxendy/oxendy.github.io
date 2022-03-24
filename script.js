@@ -20,6 +20,7 @@ const atoms = new Map([
 var navbars = ["COMPOUNDDIV", "UPGRADEDIV"];
 
 var unlockedAtoms = [];
+var unlockedDivs = [];
 
 
 
@@ -47,7 +48,11 @@ function saveGame() {
   for (let i = 0; i < unlockedAtoms.length; i++) {
     localStorage.setItem("unlockedAtom" + i, unlockedAtoms[i]);
   }
+  for (let i = 0; i < unlockedDivs.length; i++) {
+    localStorage.setItem("unlockedDiv" + i, unlockedDivs[i]);
+  }
 
+  
   if (document.getElementById("enableAutosave").checked) {
   } else {
     savedSuccessfully();
@@ -69,6 +74,7 @@ function loadGame() {
   for (let j = 0; j < atoms.size; j++) {
     unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j));
   }
+  
   updateElement();
 }
 
