@@ -16,10 +16,13 @@ window.onload = function(){
 //////////////////////////////////////////
 //     UPDATE ELEMENTS                 //
 ////////////////////////////////////////
+
 function updateElement(){
   updateAtom()
   updateButton()
+  updateDiv()
 }    
+
 function updateButton(){
   if ( atoms.get('hydrogen') >= 10 ){
     toggleStuff('requestAnUpdate','show')

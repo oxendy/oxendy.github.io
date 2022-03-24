@@ -74,7 +74,10 @@ function loadGame() {
   for (let j = 0; j < atoms.size; j++) {
     unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j));
   }
-  
+  for (let j = 0; j < navbars.length; j++) {
+    unlockedDivs.push(localStorage.getItem("unlockedDiv" + j));
+    
+  }
   updateElement();
 }
 

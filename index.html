@@ -31,14 +31,16 @@
       | <a href="#" onclick="saveGame();return false;">SAVE</a> |
 <br />+------+
       </div>
+      
+      
       <div id="compoundBar">
       --------+<br>
       <a onclick="navBar('COMPOUNDDIV')" href="#Compound">Compound</a>|
 <br />--------+
       </div>
+      
+      
       <div id="upgradeBar">
-        
-        
       -------+<br>
       <a onclick="navBar('UPGRADEDIV')" href="#Upgrade">Upgrade</a>|
 <br />-------+
@@ -67,7 +69,7 @@
         <h3 id="counter"></h3>
       <div class="gameDiv">
         <button type="button" onclick="increment()" id="incre" class="button">Grab an atom</button>
-        <button type="button" onclick="" id="requestAnUpdate" class="button">Request an update</button>
+        <button type="button" onclick="unlockedDivs.push('UPGRADEDIV');toggleStuff('upgradeBar','show');toggleStuff('requestAnUpdate','hide')" id="requestAnUpdate" class="button">Request an update</button>
       </div>
         
         <br>
