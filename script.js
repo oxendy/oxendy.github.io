@@ -12,6 +12,7 @@ window.onload = function(){
   navBar('COMPOUNDDIV')
 }
 
+
 //Declaration
 
 const compoundList = {
@@ -29,7 +30,7 @@ const atoms = new Map([
 ])
 var navbars = ["COMPOUNDDIV","UPGRADEDIV"]
 
-
+var unlockedAtoms = []
 
 if ( localStorage.length > 0 ){
   loadGame()
@@ -43,9 +44,13 @@ function saveGame(){
   localStorage.setItem("electron", electron)
 
   for (const [key, value] of atoms.entries()) {
-    localStorage.setItem(key,value)
-    console.log(localStorage.getItem(key))
+    localStorage.setItem("player"+key,value)
   }
+  
+  for ( let i = 0; i < unlockedAtoms.length; i++ ){
+    localStorage.setItem("unlockedAtom"+i, unlockedAtoms[i])
+  }
+  
   if (document.getElementById('enableAutosave').checked) {
   
   } else {
@@ -59,9 +64,13 @@ function loadGame(){
   electron = parseInt(localStorage.getItem("electron"))
   
   for (let i = 0; i < atoms.size; i++) {
-    atoms.set(Array.from(atoms.keys())[i], parseInt(localStorage.getItem(Array.from(atoms.keys())[i])))
+    atoms.set(Array.from(atoms.keys())[i], parseInt(localStorage.getItem("player"+Array.from(atoms.keys())[i])))
+  }
+  for (let j = 0; j < atoms.size; j++) {
+    unlockedAtoms.push(localStorage.getItem("unlockedAtom"+j))
   }
   
+
   updateAtom()
   
 }
@@ -137,12 +146,19 @@ function increment(){
     
     
 function availAtom(){
+  
   for (const [key, value] of Object.entries(compoundList)) {
         let arrayVal = value
-        let temp = document.getElementById(key + 'make')
         if ( proton >= arrayVal[0] && electron >= arrayVal[1] && neutron >= arrayVal[2] ){
           toggleStuff(key + 'make','show')
+          if (!unlockedAtoms.includes(key)){
+            unlockedAtoms.push(key)
+          }
           
+          
+        }
+        else if ( unlockedAtoms.includes(key) ){
+          document.getElementById(key+'make').disabled = true;
         }
         else{
           toggleStuff(key + 'make','hide')
