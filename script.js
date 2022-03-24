@@ -20,7 +20,7 @@ const atoms = new Map([
 var navbars = ["COMPOUNDDIV", "UPGRADEDIV"];
 
 var unlockedAtoms = [];
-var unlockedDivs = [];
+var unlockedDivs = ['compoundbardiv'];
 
 
 

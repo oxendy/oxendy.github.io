@@ -23,6 +23,17 @@ function updateElement(){
   updateDiv()
 }    
 
+function updateDiv(){
+  for ( let i = 0; i < navbars.length; i++) {
+    if ( unlockedDivs.includes(navbars[i]) ){
+      toggleStuff(navbars[i].toLowerCase() + "bar","show")
+    }else{
+      toggleStuff(navbars[i].toLowerCase() + "bar","hide")
+    }
+  
+  }
+}
+
 function updateButton(){
   if ( atoms.get('hydrogen') >= 10 ){
     toggleStuff('requestAnUpdate','show')
