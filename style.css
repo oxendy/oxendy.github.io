@@ -233,3 +233,14 @@ End OF Loading Screen Style
 /*****************************************************************************
 End OF Modal Style
 ******************************************************************************/
+
+.buttonDesc {
+  display: none;
+  font-size: 14px;
+  vertical-align: sub;
+}
+    
+.button:hover + .buttonDesc {
+  display: block;
+  color: black;
+}
