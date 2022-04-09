@@ -233,3 +233,22 @@ End OF Loading Screen Style
 /*****************************************************************************
 End OF Modal Style
 ******************************************************************************/
+abbr {
+  font-weight: bold;
+  position: relative;
+  font-size: 14px;
+}
+
+abbr:hover::after {
+  
+  background: #fefefe;
+  bottom: 100%;
+  content: attr(title);
+  display: block;
+  padding: 15px;
+  position: absolute; 
+  width: 280px;
+  z-index: 1;
+  border: 2px solid #888888;
+  margin: 15% auto
+}
