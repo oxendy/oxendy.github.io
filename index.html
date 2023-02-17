@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://cdn.glitch.global/2bba2b56-f320-4112-bdda-92320564d9c6/icon.ico?v=1648105122923" />
+
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <title>Atom Clicker</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="updateFunc.js" defer></script>
+    <script src="modal.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+  
+    <div id="navBar" class="gameDiv">
+      <div id="saveBar">
+      +------+<br>
+      | <a href="#" onclick="saveGame();return false;">SAVE</a> |
+<br />+------+
+      </div>
+      
+      
+      <div id="compoundBar">
+      --------+<br>
+      <a onclick="navBar('COMPOUNDDIV')" href="#Compound">Compound</a>|
+<br />--------+
+      </div>
+      
+      
+      <div id="upgradeBar">
+      -------+<br>
+      <a onclick="navBar('UPGRADEDIV')" href="#Upgrade">Upgrade</a>|
+<br />-------+
+      </div>
+
+    </div>
+
+<!--Begin of compound div-->
+<div id="COMPOUNDDIV" class="MainGameDiv">
+<p class="multiline" style="text-align: center;
+  margin: 0px;">
+   _____                                            _ 
+  / ____|                                          | |
+ | |     ___  _ __ ___  _ __   ___  _   _ _ __   __| |
+ | |    / _ \| '_ ` _ \| '_ \ / _ \| | | | '_ \ / _` |
+ | |___| (_) | | | | | | |_) | (_) | |_| | | | | (_| |
+  \_____\___/|_| |_| |_| .__/ \___/ \__,_|_| |_|\__,_|
+                       | |                            
+                       |_|                            
+</p>
+    <p id="logger">
+      Welcome to Atom Clicker!
+    </p>
+    
+    <div id="counterDiv" >
+        <h3 id="counter"></h3>
+      <div class="gameDiv">
+        <abbr title="Grant a random proton, neutron or electron"><button type="button" onclick="increment()" id="incre" class="button">Grab an atom</button></abbr>
+        <button type="button" onclick="requestUpgrade()" id="requestAnUpdate" class="button">Request an update</button>
+      </div>
+        
+        <br>
+    </div>
+    
+    <div class="gameDiv">
+      
+      <br>
+      <div id="compoundDiv" class="col">
+
+          <p>Compound</p>
+          <hr style="margin-top:-1em" />
+
+          <div id="hydrogenmake">
+          <button id="hydrogen" class = "button" onclick="compoundAtom('hydrogen')">Make hydrogen</button> | Hydrogen: <span id="hydrogenCount">0</span><br />
+          </div>
+          
+
+          <br>
+
+          <div id="heliummake">
+          <button id="helium" class = "button" onclick="compoundAtom('helium')" >Make helium</button> | Helium: <span id="heliumCount">0</span><br />
+          </div>
+
+          <br>
+
+          <div id="oxygenmake">
+          <button id="oxygen" class = "button" onclick="compoundAtom('oxygen')">Make oxygen</button> | Oxygen: <span id="oxygenCount">0</span><br />
+          </div>
+  
+      </div>
+      <div class="col">
+        <p class="multiline" id="atomicASCII">
+      
+                      (@@@(                    
+                   (@(   (@(       
+                 .,/%*   ,(((,      
+     *%%%%%*     ,///,     (@(     *%%%%%*
+   (@(     (@(   (@(       (@( (@@@(     (@(
+   *%(,.     *%%%&@(       (@&%*       .,(%*
+     (@(       ,(((,       ,(((,       (@(
+     .,(%*     (@( *%%%%%%%* (@(     *%(,.
+         (@(   (@@@(       (@@@(   (@(
+           *%(,#@(   *###*   (@#,(%*
+           ,(((%@(   *###*   (@%(((,
+         .,*(, (@&%*  ...  *%&@( .,(%*
+       (@#***. (@( (@@@@@@@( (@(     (@(
+   .,(%*       *%(,.       .,(%*       (@(
+   (@(       ,(((%@(       (@%(/***.   ,(((,
+   (@(     *%(,,,#@(       (@#,/####%*   (@(
+     (@@@@@(     (@(       (@(       (@@@(
+                   (@(   (@(
+                   ,(((((((,
+                     .,,,.
+        </p>
+      </div>
+    </div>
+
+</div>   
+<!--End Of Compound Div -->    
+    
+<div id="UPGRADEDIV" class="MainGameDiv">
+  <p class="multiline" style="text-align: center;
+  margin: 0px;">
+  _    _                           _      
+ | |  | |                         | |     
+ | |  | |_ __   __ _ _ __ __ _  __| | ___ 
+ | |  | | '_ \ / _` | '__/ _` |/ _` |/ _ \
+ | |__| | |_) | (_| | | | (_| | (_| |  __/
+  \____/| .__/ \__, |_|  \__,_|\__,_|\___|
+        | |     __/ |                     
+        |_|    |___/                      
+  </p>  
+  
+</div>    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="saveModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p style="text-align:center;">Successfully saved</p>
+      
+      <input type="checkbox" id="enableAutosave" name="Autosave" onclick="autoSave()">
+      <label for="Autosave">Enable autosave</label>
+      
+    </div>
+
+  </div>
+
+  </body>
+</html>
