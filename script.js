@@ -2,7 +2,11 @@
 //     VARIABLE DECLARATION            //
 ////////////////////////////////////////
 
-
+var readout1 = document.getElementById('readout1');
+var readout2 = document.getElementById('readout2');
+var readout3 = document.getElementById('readout3');
+var readout4 = document.getElementById('readout4');
+var readout5 = document.getElementById('readout5')
 
 const compoundList = {
   hydrogen: [1, 0, 1],
@@ -93,6 +97,13 @@ function delay(time) {
 //    IN-GAME FUNCTIONS                //
 ////////////////////////////////////////
 
+function displayMessage(msg){
+  readout5.innerHTML=readout4.innerHTML;
+  readout4.innerHTML=readout3.innerHTML;
+  readout3.innerHTML=readout2.innerHTML;
+  readout2.innerHTML=readout1.innerHTML;
+  readout1.innerHTML=msg;
+}
 
 
 function compoundAtom(atom) {
