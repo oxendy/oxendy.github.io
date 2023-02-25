@@ -12,6 +12,7 @@ const compoundList = {
   hydrogen: [1, 0, 1],
   helium: [2, 2, 2],
   oxygen: [8, 8, 8],
+  carbon: [6, 6, 6],
 };
 var proton = 0;
 var neutron = 0;
@@ -20,6 +21,7 @@ const atoms = new Map([
   ["hydrogen", 0],
   ["helium", 0],
   ["oxygen", 0],
+  ["carbon", 0],
 ]);
 var navbars = ["COMPOUNDDIV", "UPGRADEDIV"];
 
@@ -36,7 +38,7 @@ var unlockedDivs = ['COMPOUNDDIV'];
 
 if (localStorage.length > 0) {
   loadGame();
-  document.getElementById("logger").innerHTML = "Welcome back";
+  displayMessage('Welcome back!');
 }
 
 
@@ -50,7 +52,10 @@ function saveGame() {
   }
 
   for (let i = 0; i < unlockedAtoms.length; i++) {
-    localStorage.setItem("unlockedAtom" + i, unlockedAtoms[i]);
+    console.log(unlockedAtoms[i])
+    if (unlockedAtoms[i] !== null) {
+      localStorage.setItem("unlockedAtom" + i, unlockedAtoms[i]);
+    }
   }
   
   for (let j = 0; j < unlockedDivs.length; j++) {
@@ -66,6 +71,8 @@ function saveGame() {
 
 
 function loadGame() {
+  unlockedAtoms = [];
+  unlockedDivs  = ['COMPOUNDDIV'];
   proton = parseInt(localStorage.getItem("proton"));
   neutron = parseInt(localStorage.getItem("neutron"));
   electron = parseInt(localStorage.getItem("electron"));
@@ -73,11 +80,11 @@ function loadGame() {
   for (let i = 0; i < atoms.size; i++) {
     atoms.set(
       Array.from(atoms.keys())[i],
-      parseInt(localStorage.getItem("player" + Array.from(atoms.keys())[i]))
+      parseInt(localStorage.getItem("player" + Array.from(atoms.keys())[i]) || 0)
     );
   }
   for (let j = 0; j < atoms.size; j++) {
-    unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j));
+    unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j) || "");
   }
   for (let k = 0; k < navbars.length; k++) {
     unlockedDivs.push(localStorage.getItem("unlockedDiv" + k));
