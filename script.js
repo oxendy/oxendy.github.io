@@ -84,7 +84,9 @@ function loadGame() {
     );
   }
   for (let j = 0; j < atoms.size; j++) {
-    unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j) || "");
+    if (localStorage.getItem("unlockedAtom" + j) !== null){
+      unlockedAtoms.push(localStorage.getItem("unlockedAtom" + j));
+    } else { continue };
   }
   for (let k = 0; k < navbars.length; k++) {
     unlockedDivs.push(localStorage.getItem("unlockedDiv" + k));
@@ -104,15 +106,6 @@ function delay(time) {
 //    IN-GAME FUNCTIONS                //
 ////////////////////////////////////////
 
-function displayMessage(msg){
-  readout5.innerHTML=readout4.innerHTML;
-  readout4.innerHTML=readout3.innerHTML;
-  readout3.innerHTML=readout2.innerHTML;
-  readout2.innerHTML=readout1.innerHTML;
-  readout1.innerHTML=msg;
-}
-
-
 function compoundAtom(atom) {
   let particle = compoundList[atom];
   if (
@@ -130,19 +123,6 @@ function compoundAtom(atom) {
     
   }
   updateElement();
-}
-
-function toggleStuff(id, cur) {
-  let temp = document.getElementById(id);
-  if (cur == "show") {
-    temp.style.display = "block";
-  } else {
-    temp.style.display = "none";
-  }
-}
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
 }
 
 function increment() {
