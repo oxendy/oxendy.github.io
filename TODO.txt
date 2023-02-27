@@ -3,5 +3,7 @@
   - Fix unlocked atoms save/load x
   - Fix save load function x
   - Add ASCII Animation
+  - Add new Node modules
+  - Make colored-texts
 
                      
