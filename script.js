@@ -38,7 +38,7 @@ var unlockedDivs = ['COMPOUNDDIV'];
 
 if (localStorage.length > 0) {
   loadGame();
-  displayMessage('Welcome back!');
+  displayMessage(`${cText("Welcome back!",255,0,0)}`);
 }
 
 

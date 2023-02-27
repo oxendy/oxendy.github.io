@@ -2,6 +2,8 @@
 //    RANDOM FUNCTIONS                //
 ////////////////////////////////////////
 
+var ansi_up = new AnsiUp;
+
 function toggleStuff(id, cur) {
     let temp = document.getElementById(id);
     if (cur == "show") {
@@ -23,13 +25,3 @@ function displayMessage(msg){
     readout1.innerHTML=msg;
   }
 
-function cText(msg,r,g,b,style = "n"){
-    const cTextStyles = new Map([
-        ["b", "\u001b[1m"],
-        ["i", "\u001b[3m"],
-        ["u", "\u001b[4m"],
-        ["n", ""]
-
-      ]);
-    return "${cTextStyles.get(msg)}\u001b[38;2;${r};${g};${b}m${msg}\u001b[0m"
-}
