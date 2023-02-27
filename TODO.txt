@@ -1,7 +1,7 @@
       TODO:
   - Re-read the code x
-  - Fix unlocked atoms save/load
-  - Fix save load function
+  - Fix unlocked atoms save/load x
+  - Fix save load function x
   - Add ASCII Animation
 
                      
